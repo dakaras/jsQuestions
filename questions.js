@@ -18,9 +18,9 @@ function isPrime(n){
     return true 
 }
 
-console.log(isPrime(137));
+console.log('isPrime(137)',isPrime(137));
 //true
-console.log(isPrime(237));
+console.log('isPrime(237)', isPrime(237));
 // false
 
 // 2. Prime Factors
@@ -44,5 +44,37 @@ function primeFactors(n) {
     }
     return factors 
 }
-console.log(primeFactors(69)); 
+console.log('primeFactors(69)' , primeFactors(69));
 //[3, 23]
+
+// 3. Fibonacci
+// Question: How do get nth Fibonacci number?
+
+// Answer: I create an array and start from iterate through.
+
+// Fibonacci series is one of the most popular interview question for beginners
+// so, you have to learn this one.
+
+function fibonacci(n){
+    let fibo = [0,1]
+
+    if (n<=2) return 1
+
+    for (let i = 2; i <=n; i++){
+        fibo[i] = fibo[i-1]+fibo[1-2]
+    }
+    return fibo[n]
+}
+console.log('fibonacci(12)',fibonacci(12))
+//144
+
+//Recursive Answer
+
+function fib(n) {
+    if (n <= 1)
+        return n;
+    else
+        return fib(n - 1) + fib(n - 2);
+}
+console.log('fib(12', fib(12))
+//144
